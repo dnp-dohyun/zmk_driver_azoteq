@@ -425,3 +425,12 @@ properties:
       Sets the minimum duration a finger must be held to trigger a hold gesture.
       Written to the HOLD_TIME register (0x06BD).
       Only written if explicitly set.
+
+  tap-drag-time:
+    type: int
+    required: false
+    description: |
+      Tap-and-drag window in milliseconds. When greater than 0, touching the
+      pad again within this time after a single tap holds the left button until
+      the finger lifts. The tap that ends a tap-drag does not emit an extra click.
+      0 (default) disables tap-and-drag.

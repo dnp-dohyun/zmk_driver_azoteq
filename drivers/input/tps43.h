@@ -258,6 +258,7 @@ struct tps43_config {
     int16_t tap_time;
     int16_t tap_distance;
     int16_t hold_time;
+    int16_t tap_drag_time;
 };
 
 struct tps43_drv_data {
@@ -272,6 +273,9 @@ struct tps43_drv_data {
     bool suspended;
     bool touching;
     int64_t last_three_finger_swipe_ms;
+    bool tap_drag_active;
+    bool suppress_tap;
+    int64_t last_tap_ms;
 };
 
 int tps43_set_sleep(const struct device *dev, bool sleep);
